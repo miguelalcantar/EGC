@@ -1,0 +1,27 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clasificacion de arritmias</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand ml-5" href="/">EGC</a>
+</nav>
+<div class="container">
+	<div class="row my-4">
+		<div class="col-10 col-md-8 mx-auto">
+			<h2>Ingresa el espectrograma</h2><hr>
+			<form method=post enctype=multipart/form-data>
+				<input type=file name=file>
+				<input class="btn btn-success" type=submit value=Analizar>
+			</form>
+		</div>
+	</div>
+	{% for r in result %}
+		{{ r }}
+	{% endfor %}
+</div>
+</body>
+</html>

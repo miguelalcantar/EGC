@@ -4,6 +4,11 @@
 <head>
 	<title>Clasificacion de arritmias</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!--	<style>-->
+<!--		#plot {-->
+<!--			display: none;-->
+<!--		}-->
+<!--	</style>-->
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,9 +24,24 @@
 			</form>
 		</div>
 	</div>
-	{% for r in result %}
-		{{ r }}
-	{% endfor %}
+
+	{% if display %}
+	<div class="row">
+		<div class="col-4 mx-auto">
+			<br><h3>Clasificación: {{ result[1] }}</h3><br>
+			<h3>Porcentaje de certeza: {{ result[0] }}%</h3><hr>
+		</div>
+		<div class="col-6 mx-auto">
+			<img src="/plot.png" alt="my plot">
+		</div>
+	</div>
+	{% endif %}
+
 </div>
+<script>
+	function displayImg(){
+		window.location.href('/resultados');
+	}
+</script>
 </body>
 </html>
